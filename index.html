@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מערכת תמלול</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h1>ברוכים הבאים למערכת התמלול</h1>
+
+  <div id="login-section">
+    <div id="g_id_onload"
+         data-client_id="821890513550-o7b29f3abllq3l0if7su1mfro3kgfr1r.apps.googleusercontent.com"
+         data-callback="handleLogin"
+         data-ux_mode="popup"
+         data-auto_prompt="false"
+         data-scope="https://www.googleapis.com/auth/drive.file">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+  </div>
+
+  <div id="upload-section" style="display: none;">
+    <p id="user-email"></p>
+
+    <label for="file-input">בחר קובץ:</label>
+    <input type="file" id="file-input" />
+
+    <label for="model">בחר מודל:</label>
+    <select id="model" name="model">
+      <option value="tiny">Tiny</option>
+      <option value="base">Base</option>
+      <option value="faster-whisper">Faster Whisper</option>
+      <option value="ivrit-ai">Ivrit.ai</option>
+    </select>
+
+    <label for="language">בחר שפה:</label>
+    <select id="language" name="language">
+      <option value="he">עברית</option>
+      <option value="en">אנגלית</option>
+      <option value="ar">ערבית</option>
+    </select>
+
+    <label for="output-format">בחר פורמט פלט:</label>
+    <select id="output-format" name="output_format" multiple>
+      <option value="txt">.txt</option>
+      <option value="srt">.srt</option>
+      <option value="vtt">.vtt</option>
+      <option value="tsv">.tsv</option>
+      <option value="json">.json</option>
+    </select>
+
+    <button id="upload-button">העלה קובץ</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
